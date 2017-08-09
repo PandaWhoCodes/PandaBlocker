@@ -1,0 +1,38 @@
+{
+  "name": "PandaBlocker",
+  "version": "0.0.8",
+  "version": "0.0.6",
+  "manifest_version": 2,
+  "description": "Replaces Facebook ads with Panda Images and Gifs",
+  "homepage_url": "http://www.bluescreen.club",
+  "default_locale": "en",
+  "icons": {
+    "16": "img/logo.png",
+    "48": "img/logo.png",
+    "128": "img/logo.png"
+  },
+  "browser_action": {
+    "default_popup": "popup.html"
+  },
+  "permissions": [
+    "*://*.facebook.com/*"
+  ],
+  "comment1": "The above permissions define where your app will run. To run it on all the pages simply use anyurl",
+  "content_scripts": [
+    {
+      "matches": [
+        "*://*.facebook.com/*"
+      ],
+      "css": [
+        "content_script/replace-reactions.css"
+      ],
+      "js": [
+        "content_script/script.js"
+      ]
+    }
+  ],
+  "comment2":"In the above content you define which scripts will be running and for what.",
+  "web_accessible_resources": [
+    "img/*.png"
+  ]
+}
